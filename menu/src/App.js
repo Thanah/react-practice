@@ -3,7 +3,7 @@ import Menu from './Menu';
 import Categories from './Categories';
 import items from './data';
 
-const allCategories = ['all', ... new Set(items.map((item)=> item.category))]
+const allCategories = ['all', ... new Set(items.map((item)=> item.category))]//set automatically filters unique values
 
 
 function App() {
