@@ -14,8 +14,8 @@ function App() {
     <div className="section-center">
       {people.map((person, personIndex)=>{
           const {id, image, name, title, quote} = person; //deconstruct data
-          //TODO more
-          return (<article key = {id}>
+          //TODO more changes
+          return (<article key = {id}>  
             <img src={image} alt={title} className="person-img"/>
             <h4>{name}</h4>
             <p className="title">{title}</p>
