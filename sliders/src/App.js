@@ -6,7 +6,7 @@ function App() {
   const [people, setPeople] = useState(data);
   const [index, setIndex] = useState(0);
   
-  useEffect(() => {
+  useEffect(() => { //handles first and last case
     const lastIndex = people.length - 1;
     if(index < 0){
       setIndex(lastIndex);
@@ -14,9 +14,9 @@ function App() {
     if(index > lastIndex){
       setIndex(0);
     }
-  }, [index, people]);
+  }, [index, people]); //invoked when index/people change
 
-  useEffect( () =>{
+  useEffect( () =>{ //handles auto slide
     let slider = setInterval(()=>{  
       setIndex(index + 1)
     }, 3000); //3 second interval
