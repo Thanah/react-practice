@@ -10,7 +10,7 @@ function App() {
     if(count <= 0){
       amount = 1;
     }
-    if(count > 8){
+    if(count > 8){  //return to this - try to make it dynamic
       amount = 8;
     }
     setText(data.slice(0,amount)) //selects new items from array
