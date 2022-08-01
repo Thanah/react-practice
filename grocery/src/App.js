@@ -7,11 +7,13 @@ function App() {
   const [list, setList] = useState([]);
   const [isEdit, setIsEdit] = useState(false);
   const [editId, setEditId] = useState(null);
-  const [alert, setAlert] = useState({show: false, msg:'', type:''})  //need to pass in object
+  const [alert, setAlert] = useState({show: false, msg:'', type:''})  //need to pass in object, type can be success or danger
   const handleSubmit = (e) => {
     e.preventDefault();
     if(!name){
       // alert
+      showAlert(true, 'danger', 'please enter a value') //if empty field submitted
+
     }
     else if (name && isEdit){
       //editing functionality
@@ -24,10 +26,14 @@ function App() {
     }
   }
 
+  const showAlert = (show=false, type='', msg='') => {
+    setAlert({show,type,msg})
+  }
+
   return (
   <section className='section-center'>
     <form className='grocery-form' onSubmit={handleSubmit}>
-      {alert.show && <Alert/>}
+      {alert.show && <Alert {... alert} resetAlert={showAlert}/>}
       <h3>grocery list</h3>
       <div className="form-control">
         <input 
