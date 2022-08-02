@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import List from './List'
 import Alert from './Alert'
 
-const getLocalStorage = ()=> {
+const getLocalStorage = ()=> {  //returns list of contents in storage, else empty list
   let list = localStorage.getItem('list');
   if(list){
     return JSON.parse(localStorage.getItem('list'))
@@ -14,7 +14,7 @@ const getLocalStorage = ()=> {
 
 function App() {
   const [name, setName] = useState(''); //entry in textbox
-  const [list, setList] = useState(getLocalStorage());
+  const [list, setList] = useState(getLocalStorage());  //rends the contents of local storage by default
   const [isEdit, setIsEdit] = useState(false);
   const [editId, setEditId] = useState(null);
   const [alert, setAlert] = useState({show: false, msg:'', type:''})  //need to pass in object, type can be success or danger
@@ -67,7 +67,7 @@ function App() {
     setName(selectedItem.title)
   }
 
-  useEffect(()=>{
+  useEffect(()=>{ //storing data locally every time list changes
     localStorage.setItem('list',JSON.stringify(list))
   }, [list])
   return (
