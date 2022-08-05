@@ -1,5 +1,6 @@
 import React from 'react'
 import phoneImg from './images/phone.svg'
+import { UseGlobalContext } from './context'
 
 const Hero = () => {
   return <h2>hero component</h2>
