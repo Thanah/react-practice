@@ -1,9 +1,9 @@
 import React from 'react'
 import phoneImg from './images/phone.svg'
-import { UseGlobalContext } from './context'
+import { useGlobalContext } from './context'
 
 const Hero = () => {
-  const { closeSubmenu } = UseGlobalContext()
+  const { closeSubmenu } = useGlobalContext()
 
   return <section className="hero">
     <div className="hero-center">

@@ -1,10 +1,10 @@
 import React from 'react'
 import logo from './images/logo.svg'
 import { FaBars } from 'react-icons/fa'
-import { UseGlobalContext } from './context'
+import { useGlobalContext } from './context'
 
 const Navbar = () => {
-  const {openSidebar, openSubmenu, closeSubmenu, closeSidebar} = UseGlobalContext();
+  const {openSidebar, openSubmenu, closeSubmenu, closeSidebar} = useGlobalContext();
   return (
     <nav className='nav'>
       <div className="nav-center">
